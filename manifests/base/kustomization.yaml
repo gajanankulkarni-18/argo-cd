@@ -3,8 +3,8 @@ kind: Kustomization
 
 
 images:
-- name: quay.io/argoproj/argocd
-  newName: quay.io/argoproj/argocd
+- name: ezee/argocd
+  newName: ezee/argocd
   newTag: v2.0.3
 resources:
 - ./application-controller

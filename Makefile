@@ -298,6 +298,9 @@ endif
 armimage:
 	docker build -t $(IMAGE_PREFIX)argocd:$(IMAGE_TAG)-arm . --build-arg BUILD_ALL_CLIS="false"
 
+ppcimage:
+	docker build -t $(IMAGE_PREFIX)argocd:$(IMAGE_TAG)-ppc64le . --build-arg BUILD_ALL_CLIS="false"
+
 .PHONY: builder-image
 builder-image:
 	docker build  -t $(IMAGE_PREFIX)argo-cd-ci-builder:$(IMAGE_TAG) --target builder .

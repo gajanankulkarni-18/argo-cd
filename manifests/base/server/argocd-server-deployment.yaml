@@ -18,8 +18,8 @@ spec:
       serviceAccountName: argocd-server
       containers:
       - name: argocd-server
-        image: quay.io/argoproj/argocd:latest
-        imagePullPolicy: Always
+        image: ezee/argocd:latest
+        imagePullPolicy: IfNotPresent
         command: [argocd-server, --staticassets, /shared/app]
         volumeMounts:
         - name: ssh-known-hosts

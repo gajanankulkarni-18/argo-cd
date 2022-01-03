@@ -18,15 +18,15 @@ spec:
       serviceAccountName: argocd-dex-server
       initContainers:
       - name: copyutil
-        image: quay.io/argoproj/argocd:latest
-        imagePullPolicy: Always
+        image: ezee/argocd:latest
+        imagePullPolicy: IfNotPresent
         command: [cp, -n, /usr/local/bin/argocd, /shared/argocd-dex]
         volumeMounts:
         - mountPath: /shared
           name: static-files
       containers:
       - name: dex
-        image: ghcr.io/dexidp/dex:v2.27.0
+        image: ezee/dex:v2.27.0
         imagePullPolicy: Always
         command: [/shared/argocd-dex, rundex]
         ports:

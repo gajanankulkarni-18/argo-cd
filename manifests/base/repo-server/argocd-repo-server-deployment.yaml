@@ -18,8 +18,8 @@ spec:
       automountServiceAccountToken: false
       containers:
       - name: argocd-repo-server
-        image: quay.io/argoproj/argocd:latest
-        imagePullPolicy: Always
+        image: ezee/argocd:latest
+        imagePullPolicy: IfNotPresent
         command:
         - uid_entrypoint.sh
         - argocd-repo-server
